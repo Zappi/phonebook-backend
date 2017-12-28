@@ -2,11 +2,14 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const cors = require('cors');
+
 
 morgan.token('personData', function getName (res) {
   return JSON.stringify(res.body);
 });
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(morgan(':method: :url :personData :response-time'))
 
@@ -91,7 +94,7 @@ app.get('/info', (req,res) => {
 
 })
 
-const port = 8080;
+const port = 3001;
 app.listen(port,() => {
   console.log(`Server running on port ${port}`);
 })
