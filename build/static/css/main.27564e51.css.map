@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,cACE,qBACA,cAAgB","file":"static/css/main.27564e51.css","sourcesContent":[".notification {\n  background-color: red;\n  font-size: 20px;\n}\n\n\n\n// WEBPACK FOOTER //\n// ./src/index.css"],"sourceRoot":""}
