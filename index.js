@@ -10,6 +10,7 @@ morgan.token('personData', function getName (res) {
 });
 
 app.use(cors());
+app.use(express.static('build'));
 app.use(bodyParser.json());
 app.use(morgan(':method: :url :personData :response-time'))
 
