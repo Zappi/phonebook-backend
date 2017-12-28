@@ -1,8 +1,14 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
+
+morgan.token('personData', function getName (res) {
+  return JSON.stringify(res.body);
+});
 
 app.use(bodyParser.json());
+app.use(morgan(':method: :url :personData :response-time'))
 
 let persons = [
     {
@@ -29,7 +35,7 @@ let persons = [
 
 app.get('/api/persons', (req,res) => {
   res.json(persons);
-})
+});
 
 app.get('/api/persons/:id', (req, res) => {
   const id = Number(req.params.id);
