@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const keys = require('../config/keys');
 
-const url = 'mongodb://jerry:jerry@ds133127.mlab.com:33127/sandbox';
+const url = keys.mongodb.dbURI;
 
 mongoose.connect(url, {useMongoClient: true});
 mongoose.Promise = global.Promise;
