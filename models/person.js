@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
+require('dotenv').config();
 
-const url = keys.mongodb.dbURI;
+const url = process.env.MONGODB_URI
 
 mongoose.connect(url, {useMongoClient: true});
 mongoose.Promise = global.Promise;
