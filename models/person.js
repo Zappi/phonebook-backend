@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const keys = require('../config/keys');
 require('dotenv').config();
 
 const url = process.env.MONGODB_URI
