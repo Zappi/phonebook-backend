@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
+const keys = require('../config/keys');
 
-
-if ( process.env.NODE_ENV !== 'production' ) {
-  require('dotenv').config()
-}
-
-const url = process.env.MONGODB_URI
+const url = keys.mongodb.dbURI;
 
 mongoose.connect(url, {useMongoClient: true});
 mongoose.Promise = global.Promise;
